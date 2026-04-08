@@ -3,7 +3,7 @@ torch.autograd.set_detect_anomaly(True)
 import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
-from torchsearchsorted import searchsorted
+# from torchsearchsorted import searchsorted
 
 
 # Misc
@@ -15,25 +15,6 @@ def init_weight(size_out, size_in):
     # Equivalent to np.random.randn(size_out, size_in) * sqrt(2 / size_in)
     return torch.randn(size_out, size_in) * torch.sqrt(torch.tensor(2.0 / size_in))
 
-# class LipschitzLinear(nn.Module):
-#     def __init__(self, in_features, out_features):
-#         super().__init__()
-#         # Initialize weights using the specified initialization method
-#         self.weight = nn.Parameter(init_weight(out_features, in_features))
-#         self.bias = nn.Parameter(torch.zeros(out_features))
-        
-#         # Initialize `c` as the maximum row sum of the initialized weights
-#         initial_c = torch.max(torch.sum(torch.abs(self.weight), dim=1, keepdim=True))
-#         self.c = nn.Parameter(initial_c.view(1))
-
-#     def normalization(self):
-#         abs_row_sum = torch.sum(torch.abs(self.weight), dim=1, keepdim=True)
-#         scale = torch.minimum(torch.tensor(1.0), F.softplus(self.c) / abs_row_sum)
-#         return self.weight * scale
-
-#     def forward(self, x):
-#         normalized_weight = self.normalization()
-#         return F.linear(x, normalized_weight, self.bias)
 
 class LipschitzLinear(nn.Module):
     def __init__(self, in_features, out_features):
@@ -119,8 +100,6 @@ class LatentNetwork(nn.Module):
         #self.std = 0.1
         print("Embed Std: ", self.std)
         nn.init.normal_(self.fc.weight, mean=0.0, std=self.std)
-        #self.out = nn.Linear(latent_size, output_size)
-        #nn.init.uniform_(self.fc.weight, a=0.0, b=0.05)
 
 
     """def forward(self, t):
@@ -132,7 +111,6 @@ class LatentNetwork(nn.Module):
         if t.shape[-1] == 1:
           t = torch.squeeze(t, dim=-1)
         latent_code = self.fc(t)
-        #latent_code = self.out(latent_code)
         return latent_code
 
 
@@ -178,15 +156,6 @@ class DirectTemporalNeRF(nn.Module):
             layers += [layer(in_channels, self.W)]
         return nn.ModuleList(layers), nn.Linear(self.W, 3)
 
-    """def query_time(self, new_pts, t, net, net_final):
-        h = torch.cat([new_pts, t], dim=-1)
-        for i, l in enumerate(net):
-            h = net[i](h)
-            h = F.relu(h)
-            if i in self.skips:
-                h = torch.cat([new_pts, h], -1)
-
-        return net_final(h)"""
     
     def query_time(self, new_pts, t, net, net_final):
 
@@ -199,21 +168,6 @@ class DirectTemporalNeRF(nn.Module):
                 h = torch.cat([new_pts, h], -1)
 
         return net_final(h)
-
-    """def forward(self, x, ts):
-        input_pts, input_views = torch.split(x, [self.input_ch, self.input_ch_views], dim=-1)
-        t = ts[0]
-
-        assert len(torch.unique(t[:, :1])) == 1, "Only accepts all points from same time"
-        cur_time = t[0, 0]
-        if cur_time == 0. and self.zero_canonical:
-            dx = torch.zeros_like(input_pts[:, :3])
-        else:
-            dx = self.query_time(input_pts, t, self._time, self._time_out)
-            input_pts_orig = input_pts[:, :3]
-            input_pts = self.embed_fn(input_pts_orig + dx)
-        out, _ = self._occ(torch.cat([input_pts, input_views], dim=-1), t)
-        return out, dx"""
 
     def forward(self, x, ts, latent, interp=False):
 
