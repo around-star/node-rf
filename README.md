@@ -17,4 +17,3 @@
   year={2026}
 }
 ```
-<img width="1555" height="568" alt="architecture" src="https://github.com/user-attachments/assets/8c820c78-7d1c-4fdc-ab4d-795ff9f90652" />
