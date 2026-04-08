@@ -196,7 +196,6 @@ torchaudio==2.0.1
 torchcde==0.2.5
 torchdiffeq==0.2.2
 torchsde==0.2.6
-torchsearchsorted @ file:///home/guests/hiran_sarkar/FullCode/DyNeRF-ODE_latent_dyn_var_position/torchsearchsorted
 torchtyping==0.1.4
 torchvision==0.15.1
 tornado==6.4.1
