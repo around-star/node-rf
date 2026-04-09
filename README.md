@@ -9,6 +9,12 @@
 
 <img width="1433" height="778" alt="teaser" src="https://github.com/user-attachments/assets/a8437625-4c84-4aa4-b6bd-45cd307796bd" />
 
+# Installation
+
+```bash
+pip install -r requirement.txt
+```
+
 # Setups
 
 This project contains two setups:
