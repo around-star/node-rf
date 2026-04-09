@@ -9,6 +9,18 @@
 
 <img width="1433" height="778" alt="teaser" src="https://github.com/user-attachments/assets/a8437625-4c84-4aa4-b6bd-45cd307796bd" />
 
+# Setups
+
+This project contains two setups:
+
+### Single Sequence
+See detailed instructions here:  
+👉 [Single Sequence Instructions](./single_sequence/README.md)
+
+### Multiple Sequences
+See detailed instructions here:  
+👉 [Multiple Sequences Instructions](./multiple_sequences/README.md)
+
 # Citation
 
 If you find this work useful, please consider citing
