@@ -19,7 +19,7 @@ See detailed instructions here:
 
 ### Multiple Sequences
 See detailed instructions here:  
-👉 [Multiple Sequences Instructions](./multiple_sequences/README.md)
+👉 [Multiple Sequences Instructions](./multi_sequences/README.md)
 
 # Citation
 
