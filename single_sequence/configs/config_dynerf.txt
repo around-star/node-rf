@@ -1,6 +1,6 @@
 expname = pitcher_base
 basedir = ./logs_flame_steak/check
-datadir = /home/guests/hiran_sarkar/FullCode/datasets/flame_steak
+datadir = ./datasets/flame_steak
 dataset_type = dynerf
 
 nerf_type = direct_temporal
