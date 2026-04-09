@@ -26,3 +26,5 @@ half_res = True
 do_half_precision = False
 
 num_cams = 18
+ode_type = euler
+sample_size = 150
