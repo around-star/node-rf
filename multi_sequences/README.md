@@ -71,3 +71,5 @@ python render.py --config configs/config_oscillating_ball.txt --ckpt_path [CHECK
 
 --render_vel : Initial velocity (of the moving object) for evaluation
 
+--static_background : True if static background is included in the dataset
+
