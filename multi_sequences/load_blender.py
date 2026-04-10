@@ -69,8 +69,7 @@ def pose_spherical(theta, phi, radius):
 
 
 def load_blender_data(args, basedir, half_res=False, testskip=1, device='cuda'):
-    # splits = ['train', 'val', 'test']
-    splits = ['train', 'test']
+    splits = ['train', 'val', 'test']
     metas = {}
 
     for s in splits:
