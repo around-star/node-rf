@@ -1,6 +1,6 @@
 expname = bouncingballs
-basedir = ./logs_bouncing_balls/logs_bouncing_balls_n2f6_iego_render_render
-datadir = /home/guests/hiran_sarkar/D-NeRF_datasets/data/bouncingballs
+basedir = ./logs_bouncing_balls/
+datadir = ./datasets/bouncingballs
 dataset_type = blender
 
 nerf_type = direct_temporal
