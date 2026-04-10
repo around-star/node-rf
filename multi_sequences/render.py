@@ -723,6 +723,7 @@ def config_parser():
     parser.add_argument('--render_pose', type=list, default=[0.29651087522506714, 0.4808536171913147])
     parser.add_argument('--render_vel', type=list, default=[0., 0.])
     parser.add_argument('--run_backwards', action='store_true', default=True)
+    parser.add_argument('--static_background', action='store_true', default=True)
     parser.add_argument('--ckpt_path', default='/home/guests/hiran_sarkar/Final_Code/multi_sequences/bifurcating_hill_ckpt/1000000.tar')
     return parser
 
