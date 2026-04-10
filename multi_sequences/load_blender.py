@@ -69,7 +69,8 @@ def pose_spherical(theta, phi, radius):
 
 
 def load_blender_data(args, basedir, half_res=False, testskip=1, device='cuda'):
-    splits = ['train', 'val', 'test']
+    # splits = ['train', 'val', 'test']
+    splits = ['train', 'test']
     metas = {}
 
     for s in splits:
@@ -162,7 +163,7 @@ def load_blender_data(args, basedir, half_res=False, testskip=1, device='cuda'):
         print("Loaded the provided render path!!")
     else:
         #render_pose = pose_spherical(-180, -30.0, 1.5)
-        render_pose = torch.tensor(poses[0])
+        render_pose = torch.tensor(poses[-1])
         render_poses = render_pose.repeat([args.render_num,1,1])
         #render_poses = render_wander_path(render_pose, [H//2, W//2, focal/2])
         #render_poses = torch.stack([pose_spherical(angle, -30.0, 4.0) for angle in np.linspace(-180,180,40+1)[:-1]], 0)
