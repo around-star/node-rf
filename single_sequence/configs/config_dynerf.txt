@@ -1,5 +1,5 @@
-expname = pitcher_base
-basedir = ./logs_flame_steak/check
+expname = flame_steak
+basedir = ./logs/
 datadir = ./datasets/flame_steak
 dataset_type = dynerf
 
