@@ -7,15 +7,19 @@ Download the datasets from [link]()
 data/
 ├── bifurcating_hill/
 │   ├── all/
-│   ├── test/
 │   ├── train/
+│   ├── val/
+│   ├── test/
 │   ├── transforms_train.json
+│   ├── transforms_val.json
 │   └── transforms_test.json
 ├── oscillating_ball/
 │   ├── all/
-│   ├── test/
 │   ├── train/
+│   ├── val/
+│   ├── test/
 │   ├── transforms_train.json
+│   ├── transforms_val.json
 │   └── transforms_test.json
 ```
 
