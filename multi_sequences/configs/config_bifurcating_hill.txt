@@ -1,7 +1,7 @@
-expname = pitcher_base
-basedir = ./logs_bifurcating_hill/
+expname = bifurcating_hill
+basedir = ./logs/
 
-datadir = .datasets/bifurcating_hill_static_background
+datadir = ./datasets/bifurcating_hill_static_background
 dataset_type = blender
 
 nerf_type = direct_temporal
@@ -25,3 +25,7 @@ precrop_frac = 0.5
 
 half_res = True
 do_half_precision = False
+
+num_seq = 8
+render_pose = []
+render_vel = []
