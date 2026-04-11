@@ -27,5 +27,5 @@ half_res = True
 do_half_precision = False
 
 num_seq = 8
-render_pose = []
-render_vel = []
+render_pose = [-0.2839129865169525, 0.4507787823677063]
+render_vel = [-0.2500871419906616-(-0.2839129865169525), 0.4409014582633972-0.4507787823677063]
