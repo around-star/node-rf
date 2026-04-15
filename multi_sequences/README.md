@@ -1,12 +1,11 @@
 # Dataset Preparation
 
-Download the datasets from [link]()
+Download the datasets from [link](https://github.com/around-star/node-rf/releases/tag/v1.0.0)
 
 ## Dataset Structure
 ```bash
 data/
 ├── bifurcating_hill/
-│   ├── all/
 │   ├── train/
 │   ├── val/
 │   ├── test/
@@ -14,7 +13,6 @@ data/
 │   ├── transforms_val.json
 │   └── transforms_test.json
 ├── oscillating_ball/
-│   ├── all/
 │   ├── train/
 │   ├── val/
 │   ├── test/
